@@ -1,0 +1,15 @@
+c:\users\brion\documents\visual studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\bin\Debug\Nintendogs + Cats Save Editor.exe.config
+c:\users\brion\documents\visual studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\bin\Debug\Nintendogs + Cats Save Editor.exe
+c:\users\brion\documents\visual studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\bin\Debug\Nintendogs + Cats Save Editor.pdb
+c:\users\brion\documents\visual studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\bin\Debug\Nintendogs + Cats Save Editor.xml
+c:\users\brion\documents\visual studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\obj\Debug\Nintendogs___Cats_Save_Editor.Form1.resources
+c:\users\brion\documents\visual studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\obj\Debug\Nintendogs___Cats_Save_Editor.Resources.resources
+c:\users\brion\documents\visual studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\obj\Debug\Nintendogs + Cats Save Editor.vbproj.GenerateResource.Cache
+c:\users\brion\documents\visual studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\obj\Debug\Nintendogs + Cats Save Editor.exe
+c:\users\brion\documents\visual studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\obj\Debug\Nintendogs + Cats Save Editor.xml
+c:\users\brion\documents\visual studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\obj\Debug\Nintendogs + Cats Save Editor.pdb
+C:\Users\Brion\Documents\Visual Studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\bin\Debug\PackageIO.dll
+C:\Users\Brion\Documents\Visual Studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\obj\Debug\Nintendogs + Cats Save Editor.vbprojResolveAssemblyReference.cache
+C:\Users\Brion\Documents\Visual Studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\obj\Debug\Nintendogs___Cats_Save_Editor.Form2.resources
+C:\Users\Brion\Documents\Visual Studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\Brion\Documents\Visual Studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\bin\Debug\fr\Microsoft.VisualBasic.PowerPacks.Vs.resources.dll
