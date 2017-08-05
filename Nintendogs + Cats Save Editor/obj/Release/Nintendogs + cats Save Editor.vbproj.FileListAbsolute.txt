@@ -13,3 +13,4 @@ C:\Users\Brion\Documents\Visual Studio 2012\Projects\Nintendogs + Cats Save Edit
 C:\Users\Brion\Documents\Visual Studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.dll
 C:\Users\Brion\Documents\Visual Studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\bin\Release\fr\Microsoft.VisualBasic.PowerPacks.Vs.resources.dll
 C:\Users\Brion\Documents\Visual Studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\obj\Release\Nintendogs + cats Save Editor.vbprojResolveAssemblyReference.cache
+C:\Users\Brion\Documents\Visual Studio 2012\Projects\Nintendogs + Cats Save Editor\Nintendogs + Cats Save Editor\obj\Release\Nintendogs___Cats_Save_Editor.Form3.resources
