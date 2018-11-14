@@ -15,3 +15,6 @@
 
 # Releases :
 https://github.com/Brionjv/3ds-Nintendogs-cats-Save-Editor/releases
+
+# Page :
+https://gbatemp.net/threads/release-3ds-nintendogs-cats-save-editor.473694/
