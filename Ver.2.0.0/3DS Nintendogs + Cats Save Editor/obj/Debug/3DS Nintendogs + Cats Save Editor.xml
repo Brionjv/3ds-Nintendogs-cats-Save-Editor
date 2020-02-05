@@ -1,0 +1,151 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+3DS Nintendogs + Cats Save Editor
+</name>
+</assembly>
+<members>
+<member name="T:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources">
+<summary>
+  Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.ResourceManager">
+<summary>
+  Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.Culture">
+<summary>
+  Remplace la propriété CurrentUICulture du thread actuel pour toutes
+  les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.bakground">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.bg_bubble">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.bg_description">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.bg_money">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.bg_settings">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.close">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.close_red">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.Icon_act_button">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.Icon_badvH">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.icon_bfilepath">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.icon_bhidden">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.icon_bnoupdate">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.Icon_bsc_warning">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.Icon_logo">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.icon_menu_settings">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.Icon_NCSE_gbt">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.Icon_NCSE_git">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.Icon_notification">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.icon_paninventory_active">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.icon_paninventory_unactive">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.icon_title">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.Icon_unact_button">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.logo_update">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.minimize">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.minimize_gray">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+</members>
+</doc>
