@@ -1,4 +1,5 @@
 ﻿Imports PackageIO
+Imports System.ComponentModel
 Imports System.IO
 Imports System.Net
 
@@ -400,11 +401,11 @@ Public Class Form1
         applicationpath & "\Backup\" & Today.Year & "_" & Today.Month & "_" & Today.Day & "_" & TimeOfDay.Hour & "h" & TimeOfDay.Minute & "\sysdata.dat")
             Notifications()
             If Select_language.SelectedItem = Select_language.Items.Item(0) Then
-                Text_done.Text = "Backup done !"
+                Text_notifications.Text = "Backup done !"
             ElseIf Select_language.SelectedItem = Select_language.Items.Item(1) Then
-                Text_done.Text = "Backup effectué !"
+                Text_notifications.Text = "Backup effectué !"
             ElseIf Select_language.SelectedItem = Select_language.Items.Item(2) Then
-                Text_done.Text = "Backup fertig !"
+                Text_notifications.Text = "Backup fertig !"
             End If
         Catch ex As Exception
         End Try
@@ -412,25 +413,25 @@ Public Class Form1
 
     Public Sub Notifications()
         If Select_language.SelectedItem = Select_language.Items.Item(0) Then
-            Text_done.Text = "It's done !"
+            Text_notifications.Text = "It's done !"
         ElseIf Select_language.SelectedItem = Select_language.Items.Item(1) Then
-            Text_done.Text = "C'est fait !"
+            Text_notifications.Text = "C'est fait !"
         ElseIf Select_language.SelectedItem = Select_language.Items.Item(2) Then
-            Text_done.Text = "Es ist fertig !"
+            Text_notifications.Text = "Es ist fertig !"
         End If
-        Panel_done.Visible = True
-        Timer_done.Start()
+        Panel_notifications.Visible = True
+        Timer_notifications.Start()
     End Sub
 
-    Private Sub Timer_done_Tick(sender As Object, e As EventArgs) Handles Timer_done.Tick
-        Timer_done.Stop()
-        Panel_done.Visible = False
+    Private Sub Timer_notifications_Tick(sender As Object, e As EventArgs) Handles Timer_notifications.Tick
+        Timer_notifications.Stop()
+        Panel_notifications.Visible = False
     End Sub
 
-    Private Sub Panel_done_VisibleChanged(sender As Object, e As EventArgs) Handles Panel_done.VisibleChanged
-        If Panel_done.Visible = False Then
+    Private Sub Panel_notifications_VisibleChanged(sender As Object, e As EventArgs) Handles Panel_notifications.VisibleChanged
+        If Panel_notifications.Visible = False Then
             Icon_description.Visible = False
-        ElseIf Panel_done.Visible = True Then
+        ElseIf Panel_notifications.Visible = True Then
             Icon_description.Visible = True
         End If
     End Sub
@@ -466,6 +467,36 @@ Public Class Form1
                 End If
             End Try
         End If
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        If Select_language.SelectedItem = Nothing Then
+            Select_language.SelectedItem = Select_language.Items.Item(0)
+        End If
+        Try
+            Setting_Advhelp.Checked = My.Settings.Para_AdvH
+            Setting_ckupdate.Checked = My.Settings.Para_chkupdate
+            Setting_hidden.Checked = My.Settings.Para_hidden
+            Select_language.SelectedItem = My.Settings.Para_language
+            Setting_filepath.Checked = My.Settings.Para_path
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        Checkupdates()
+    End Sub
+
+    Private Sub Form1_FormClosing(sender As Object, e As CancelEventArgs) Handles Me.FormClosing
+        My.Settings.Para_AdvH = Setting_Advhelp.Checked
+        My.Settings.Para_chkupdate = Setting_ckupdate.Checked
+        My.Settings.Para_hidden = Setting_hidden.Checked
+        My.Settings.Para_language = Select_language.SelectedItem
+        My.Settings.Para_path = Setting_filepath.Checked
+    End Sub
+
+    Private Sub NCSE_logo_update_Click(sender As Object, e As EventArgs) Handles NCSE_logo_update.Click
+        Process.Start("https://github.com/Brionjv/3ds-Nintendogs-cats-Save-Editor/releases")
     End Sub
     'end menu
     'settings
@@ -542,6 +573,134 @@ Public Class Form1
             AdvH_trainerpoints.Visible = False
         End If
     End Sub
+
+    Public Sub Switchlanguage()
+        If Select_language.SelectedItem = Select_language.Items.Item(0) Then
+            Text_menu_open.Text = "Open"
+            Text_menu_save.Text = "Save"
+            Menu_text_main.Text = "Main"
+            Menu_text_settings.Text = "Settings"
+            Title_animal_1.Text = "1st animal"
+            Title_animal_2.Text = "2nd animal"
+            Title_animal_3.Text = "3rd animal"
+            Title_animal_4.Text = "4th animal"
+            Title_animal_5.Text = "5th animal"
+            Title_animal_6.Text = "6th animal"
+            Title_homestyle.Text = "Home style"
+            Group_animal_1.Text = "My 1st animal is a :"
+            Group_animal_2.Text = "My 2nd animal is a :"
+            Group_animal_3.Text = "My 3rd animal is a :"
+            Group_animal_4.Text = "My 4th animal is a :"
+            Group_animal_5.Text = "My 5th animal is a :"
+            Group_animal_6.Text = "My 6th animal is a :"
+            Check_cat_1.Text = "Cat"
+            Check_cat_2.Text = "Cat"
+            Check_cat_3.Text = "Cat"
+            Check_cat_4.Text = "Cat"
+            Check_cat_5.Text = "Cat"
+            Check_cat_6.Text = "Cat"
+            Check_dog_1.Text = "Dog"
+            Check_dog_2.Text = "Dog"
+            Check_dog_3.Text = "Dog"
+            Check_dog_4.Text = "Dog"
+            Check_dog_5.Text = "Dog"
+            Check_dog_6.Text = "Dog"
+            Check_trainerpoints.Text = "Get trainer points as maximum"
+            Check_allitems.Text = "Get all items"
+            Setting_hidden.Text = "Show hidden things"
+            Setting_filepath.Text = "Show file path"
+            Setting_Advhelp.Text = "Show advance help"
+            Setting_ckupdate.Text = "Unactive check updates"
+            Text_language.Text = "Language :"
+            Settings_settings.Text = "Settings"
+            Settings_credits.Text = "Credits"
+            Settings_changelog.Text = "Changelog"
+        ElseIf Select_language.SelectedItem = Select_language.Items.Item(1) Then
+            Text_menu_open.Text = "Ouvrir"
+            Text_menu_save.Text = "Enregistrer"
+            Menu_text_main.Text = "Principal"
+            Menu_text_settings.Text = "Paramètres"
+            Title_animal_1.Text = "1er animal"
+            Title_animal_2.Text = "2ème animal"
+            Title_animal_3.Text = "3ème animal"
+            Title_animal_4.Text = "4ème animal"
+            Title_animal_5.Text = "5ème animal"
+            Title_animal_6.Text = "6ème animal"
+            Title_homestyle.Text = "Style maison"
+            Group_animal_1.Text = "Mon 1er animal est un:"
+            Group_animal_2.Text = "Mon 2ème animal est un:"
+            Group_animal_3.Text = "Mon 3ème animal est un:"
+            Group_animal_4.Text = "Mon 4ème animal est un:"
+            Group_animal_5.Text = "Mon 5ème animal est un:"
+            Group_animal_6.Text = "Mon 6ème animal est un:"
+            Check_cat_1.Text = "Chat"
+            Check_cat_2.Text = "Chat"
+            Check_cat_3.Text = "Chat"
+            Check_cat_4.Text = "Chat"
+            Check_cat_5.Text = "Chat"
+            Check_cat_6.Text = "Chat"
+            Check_dog_1.Text = "Chien"
+            Check_dog_2.Text = "Chien"
+            Check_dog_3.Text = "Chien"
+            Check_dog_4.Text = "Chien"
+            Check_dog_5.Text = "Chien"
+            Check_dog_6.Text = "Chien"
+            Check_trainerpoints.Text = "Mettre les points d'entraîneur au maximum"
+            Check_allitems.Text = "Obtenir tous les objets"
+            Setting_hidden.Text = "Afficher les choses cachées"
+            Setting_filepath.Text = "Afficher le chemin du fichier"
+            Setting_Advhelp.Text = "Afficher l'aide avancée"
+            Setting_ckupdate.Text = "Désactiver la vérification de Mises à jour"
+            Text_language.Text = "Langue:"
+            Settings_settings.Text = "Paramètres"
+            Settings_credits.Text = "Crédits"
+            Settings_changelog.Text = "Changelog"
+        ElseIf Select_language.SelectedItem = Select_language.Items.Item(2) Then
+            Text_menu_open.Text = "Öffnen"
+            Text_menu_save.Text = "Speichern"
+            Menu_text_main.Text = "Main"
+            Menu_text_settings.Text = "Einstellungen"
+            Title_animal_1.Text = "1. Tier"
+            Title_animal_2.Text = "2. Tier"
+            Title_animal_3.Text = "3. Tier"
+            Title_animal_4.Text = "4. Tier"
+            Title_animal_5.Text = "5. Tier"
+            Title_animal_6.Text = "6. Tier"
+            Title_homestyle.Text = "Heimatstil"
+            Group_animal_1.Text = "Mein 1. Tier ist ein:"
+            Group_animal_2.Text = "Mein 2. Tier ist ein:"
+            Group_animal_3.Text = "Mein 3. Tier ist ein:"
+            Group_animal_4.Text = "Mein 4. Tier ist ein:"
+            Group_animal_5.Text = "Mein 5. Tier ist ein:"
+            Group_animal_6.Text = "Mein 6. Tier ist ein:"
+            Check_cat_1.Text = "Katze"
+            Check_cat_2.Text = "Katze"
+            Check_cat_3.Text = "Katze"
+            Check_cat_4.Text = "Katze"
+            Check_cat_5.Text = "Katze"
+            Check_cat_6.Text = "Katze"
+            Check_dog_1.Text = "Hund"
+            Check_dog_2.Text = "Hund"
+            Check_dog_3.Text = "Hund"
+            Check_dog_4.Text = "Hund"
+            Check_dog_5.Text = "Hund"
+            Check_dog_6.Text = "Hund"
+            Check_trainerpoints.Text = "Holen Sie sich Trainerpunkte als Maximum"
+            Check_allitems.Text = "Alle Elemente abrufen"
+            Setting_hidden.Text = "Versteckte Dinge anzeigen"
+            Setting_filepath.Text = "Dateipfad anzeigen"
+            Setting_Advhelp.Text = "Erweiterte Hilfe anzeigen"
+            Setting_ckupdate.Text = "Updates nicht aktiv prüfen"
+            Text_language.Text = "Sprache:"
+            Settings_settings.Text = "Einstellungen"
+            Settings_credits.Text = "Credits"
+            Settings_changelog.Text = "Änderungsprotokoll"
+        End If
+    End Sub
+
+    Private Sub Select_language_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Select_language.SelectedIndexChanged
+        Switchlanguage()
+    End Sub
     'end settings
 
     Public Sub Readsysdata()
@@ -553,4 +712,5 @@ Public Class Form1
 
         End Try
     End Sub
+
 End Class

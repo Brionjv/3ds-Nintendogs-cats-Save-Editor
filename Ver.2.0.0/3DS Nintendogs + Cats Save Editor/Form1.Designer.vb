@@ -28,8 +28,8 @@ Partial Class Form1
         Me.Icon_description = New System.Windows.Forms.PictureBox()
         Me.Icon_NCSE_gbt = New System.Windows.Forms.PictureBox()
         Me.Icon_NCSE_git = New System.Windows.Forms.PictureBox()
-        Me.Panel_done = New System.Windows.Forms.Panel()
-        Me.Text_done = New System.Windows.Forms.Label()
+        Me.Panel_notifications = New System.Windows.Forms.Panel()
+        Me.Text_notifications = New System.Windows.Forms.Label()
         Me.Panelmenu_menu = New System.Windows.Forms.Panel()
         Me.Menu_main = New System.Windows.Forms.Panel()
         Me.Menu_text_main = New System.Windows.Forms.Label()
@@ -357,12 +357,12 @@ Partial Class Form1
         Me.Settings_credits = New System.Windows.Forms.TabPage()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox_fpath = New System.Windows.Forms.TextBox()
-        Me.Timer_done = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer_notifications = New System.Windows.Forms.Timer(Me.components)
         Me.Menu_panel.SuspendLayout()
         CType(Me.Icon_description, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Icon_NCSE_gbt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Icon_NCSE_git, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel_done.SuspendLayout()
+        Me.Panel_notifications.SuspendLayout()
         Me.Panelmenu_menu.SuspendLayout()
         Me.Menu_main.SuspendLayout()
         CType(Me.Menu_icon_main, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -646,7 +646,7 @@ Partial Class Form1
         Me.Menu_panel.Controls.Add(Me.Icon_description)
         Me.Menu_panel.Controls.Add(Me.Icon_NCSE_gbt)
         Me.Menu_panel.Controls.Add(Me.Icon_NCSE_git)
-        Me.Menu_panel.Controls.Add(Me.Panel_done)
+        Me.Menu_panel.Controls.Add(Me.Panel_notifications)
         Me.Menu_panel.Controls.Add(Me.Panelmenu_menu)
         Me.Menu_panel.Controls.Add(Me.Panelmenu_issues)
         Me.Menu_panel.Controls.Add(Me.Panelmenu_legends)
@@ -691,28 +691,28 @@ Partial Class Form1
         Me.Icon_NCSE_git.TabIndex = 314
         Me.Icon_NCSE_git.TabStop = False
         '
-        'Panel_done
+        'Panel_notifications
         '
-        Me.Panel_done.BackColor = System.Drawing.Color.Transparent
-        Me.Panel_done.BackgroundImage = Global._3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.bg_bubble
-        Me.Panel_done.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Panel_done.Controls.Add(Me.Text_done)
-        Me.Panel_done.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.Panel_done.Location = New System.Drawing.Point(24, 431)
-        Me.Panel_done.Name = "Panel_done"
-        Me.Panel_done.Size = New System.Drawing.Size(123, 111)
-        Me.Panel_done.TabIndex = 10
-        Me.Panel_done.Visible = False
+        Me.Panel_notifications.BackColor = System.Drawing.Color.Transparent
+        Me.Panel_notifications.BackgroundImage = Global._3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.bg_bubble
+        Me.Panel_notifications.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Panel_notifications.Controls.Add(Me.Text_notifications)
+        Me.Panel_notifications.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.Panel_notifications.Location = New System.Drawing.Point(24, 431)
+        Me.Panel_notifications.Name = "Panel_notifications"
+        Me.Panel_notifications.Size = New System.Drawing.Size(123, 111)
+        Me.Panel_notifications.TabIndex = 10
+        Me.Panel_notifications.Visible = False
         '
-        'Text_done
+        'Text_notifications
         '
-        Me.Text_done.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Text_done.Location = New System.Drawing.Point(3, 3)
-        Me.Text_done.Name = "Text_done"
-        Me.Text_done.Size = New System.Drawing.Size(117, 83)
-        Me.Text_done.TabIndex = 0
-        Me.Text_done.Text = "It's done !"
-        Me.Text_done.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Text_notifications.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Text_notifications.Location = New System.Drawing.Point(3, 3)
+        Me.Text_notifications.Name = "Text_notifications"
+        Me.Text_notifications.Size = New System.Drawing.Size(117, 83)
+        Me.Text_notifications.TabIndex = 0
+        Me.Text_notifications.Text = "It's done !"
+        Me.Text_notifications.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panelmenu_menu
         '
@@ -4316,9 +4316,9 @@ Partial Class Form1
         Me.TextBox_fpath.TabIndex = 97
         Me.TextBox_fpath.Visible = False
         '
-        'Timer_done
+        'Timer_notifications
         '
-        Me.Timer_done.Interval = 1000
+        Me.Timer_notifications.Interval = 1000
         '
         'Form1
         '
@@ -4327,13 +4327,13 @@ Partial Class Form1
         Me.BackgroundImage = Global._3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.bakground
         Me.ClientSize = New System.Drawing.Size(830, 650)
         Me.Controls.Add(Me.TextBox_fpath)
-        Me.Controls.Add(Me.Panel_main)
         Me.Controls.Add(Me.Panel_description)
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.Menu_panel)
         Me.Controls.Add(Me.TLSE_header)
         Me.Controls.Add(Me.NCSE_logo)
         Me.Controls.Add(Me.NCSE_logo_update)
+        Me.Controls.Add(Me.Panel_main)
         Me.Controls.Add(Me.Panel_inventory)
         Me.Controls.Add(Me.Panel_settings)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -4345,7 +4345,7 @@ Partial Class Form1
         CType(Me.Icon_description, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Icon_NCSE_gbt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Icon_NCSE_git, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel_done.ResumeLayout(False)
+        Me.Panel_notifications.ResumeLayout(False)
         Me.Panelmenu_menu.ResumeLayout(False)
         Me.Menu_main.ResumeLayout(False)
         CType(Me.Menu_icon_main, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4641,8 +4641,8 @@ Partial Class Form1
 
     Friend WithEvents Menu_panel As Panel
     Friend WithEvents Icon_description As PictureBox
-    Friend WithEvents Panel_done As Panel
-    Friend WithEvents Text_done As Label
+    Friend WithEvents Panel_notifications As Panel
+    Friend WithEvents Text_notifications As Label
     Friend WithEvents Panelmenu_menu As Panel
     Friend WithEvents Menu_main As Panel
     Friend WithEvents Menu_text_main As Label
@@ -4972,5 +4972,5 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox_fpath As TextBox
     Friend WithEvents Title_homestyle As Label
-    Friend WithEvents Timer_done As Timer
+    Friend WithEvents Timer_notifications As Timer
 End Class

@@ -42,9 +42,10 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Select_language = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.NCSE_logo_update = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -270,16 +271,16 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Unlock all items"
         '
-        'ComboBox1
+        'Select_language
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"EN", "FR", "DE"})
-        Me.ComboBox1.Location = New System.Drawing.Point(318, 60)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(44, 21)
-        Me.ComboBox1.TabIndex = 18
+        Me.Select_language.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Select_language.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Select_language.FormattingEnabled = True
+        Me.Select_language.Items.AddRange(New Object() {"EN", "FR", "DE"})
+        Me.Select_language.Location = New System.Drawing.Point(318, 60)
+        Me.Select_language.Name = "Select_language"
+        Me.Select_language.Size = New System.Drawing.Size(44, 21)
+        Me.Select_language.TabIndex = 18
         '
         'Label6
         '
@@ -288,7 +289,7 @@ Partial Class Form1
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(69, 13)
         Me.Label6.TabIndex = 19
-        Me.Label6.Text = "Version 1.0.1"
+        Me.Label6.Text = "Version 1.0.2"
         '
         'Label7
         '
@@ -300,6 +301,19 @@ Partial Class Form1
         Me.Label7.TabIndex = 20
         Me.Label7.Text = "Credits"
         '
+        'NCSE_logo_update
+        '
+        Me.NCSE_logo_update.AutoSize = True
+        Me.NCSE_logo_update.BackColor = System.Drawing.Color.Transparent
+        Me.NCSE_logo_update.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.NCSE_logo_update.ForeColor = System.Drawing.Color.Red
+        Me.NCSE_logo_update.Location = New System.Drawing.Point(76, 287)
+        Me.NCSE_logo_update.Name = "NCSE_logo_update"
+        Me.NCSE_logo_update.Size = New System.Drawing.Size(110, 13)
+        Me.NCSE_logo_update.TabIndex = 21
+        Me.NCSE_logo_update.Text = "New update available"
+        Me.NCSE_logo_update.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -307,9 +321,10 @@ Partial Class Form1
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(373, 301)
+        Me.Controls.Add(Me.NCSE_logo_update)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.Select_language)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.PictureBox1)
@@ -350,10 +365,11 @@ Partial Class Form1
     Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents Select_language As System.Windows.Forms.ComboBox
     Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents NCSE_logo_update As System.Windows.Forms.Label
 
 End Class
