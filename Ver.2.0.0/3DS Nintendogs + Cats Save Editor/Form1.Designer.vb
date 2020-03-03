@@ -112,17 +112,17 @@ Partial Class Form1
         Me.AdvH_trainerpoints = New System.Windows.Forms.PictureBox()
         Me.AdvH_homestyle = New System.Windows.Forms.PictureBox()
         Me.AdvH_money = New System.Windows.Forms.PictureBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.Text_animal_6 = New System.Windows.Forms.TextBox()
         Me.Title_animal_6 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.Text_animal_5 = New System.Windows.Forms.TextBox()
         Me.Title_animal_5 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Text_animal_4 = New System.Windows.Forms.TextBox()
         Me.Title_animal_4 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.Text_animal_3 = New System.Windows.Forms.TextBox()
         Me.Title_animal_3 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Text_animal_2 = New System.Windows.Forms.TextBox()
         Me.Title_animal_2 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Text_animal_1 = New System.Windows.Forms.TextBox()
         Me.Title_animal_1 = New System.Windows.Forms.Label()
         Me.Check_trainerpoints = New System.Windows.Forms.CheckBox()
         Me.valu_money = New System.Windows.Forms.NumericUpDown()
@@ -1043,7 +1043,6 @@ Partial Class Form1
         Me.Icon_filepath.BackColor = System.Drawing.Color.Transparent
         Me.Icon_filepath.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Icon_filepath.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Icon_filepath.Enabled = False
         Me.Icon_filepath.Image = Global._3DS_Nintendogs___Cats_Save_Editor.My.Resources.Resources.icon_bfilepath
         Me.Icon_filepath.Location = New System.Drawing.Point(0, 0)
         Me.Icon_filepath.Name = "Icon_filepath"
@@ -1322,17 +1321,17 @@ Partial Class Form1
         Me.Panel_main.Controls.Add(Me.AdvH_trainerpoints)
         Me.Panel_main.Controls.Add(Me.AdvH_homestyle)
         Me.Panel_main.Controls.Add(Me.AdvH_money)
-        Me.Panel_main.Controls.Add(Me.TextBox7)
+        Me.Panel_main.Controls.Add(Me.Text_animal_6)
         Me.Panel_main.Controls.Add(Me.Title_animal_6)
-        Me.Panel_main.Controls.Add(Me.TextBox8)
+        Me.Panel_main.Controls.Add(Me.Text_animal_5)
         Me.Panel_main.Controls.Add(Me.Title_animal_5)
-        Me.Panel_main.Controls.Add(Me.TextBox5)
+        Me.Panel_main.Controls.Add(Me.Text_animal_4)
         Me.Panel_main.Controls.Add(Me.Title_animal_4)
-        Me.Panel_main.Controls.Add(Me.TextBox6)
+        Me.Panel_main.Controls.Add(Me.Text_animal_3)
         Me.Panel_main.Controls.Add(Me.Title_animal_3)
-        Me.Panel_main.Controls.Add(Me.TextBox4)
+        Me.Panel_main.Controls.Add(Me.Text_animal_2)
         Me.Panel_main.Controls.Add(Me.Title_animal_2)
-        Me.Panel_main.Controls.Add(Me.TextBox3)
+        Me.Panel_main.Controls.Add(Me.Text_animal_1)
         Me.Panel_main.Controls.Add(Me.Title_animal_1)
         Me.Panel_main.Controls.Add(Me.Check_trainerpoints)
         Me.Panel_main.Controls.Add(Me.valu_money)
@@ -1726,14 +1725,14 @@ Partial Class Form1
         Me.AdvH_money.TabStop = False
         Me.AdvH_money.Visible = False
         '
-        'TextBox7
+        'Text_animal_6
         '
-        Me.TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox7.Location = New System.Drawing.Point(380, 428)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(140, 13)
-        Me.TextBox7.TabIndex = 16
-        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Text_animal_6.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Text_animal_6.Location = New System.Drawing.Point(380, 428)
+        Me.Text_animal_6.Name = "Text_animal_6"
+        Me.Text_animal_6.Size = New System.Drawing.Size(140, 13)
+        Me.Text_animal_6.TabIndex = 16
+        Me.Text_animal_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Title_animal_6
         '
@@ -1744,14 +1743,14 @@ Partial Class Form1
         Me.Title_animal_6.Text = "6th animal"
         Me.Title_animal_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox8
+        'Text_animal_5
         '
-        Me.TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox8.Location = New System.Drawing.Point(106, 428)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(140, 13)
-        Me.TextBox8.TabIndex = 14
-        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Text_animal_5.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Text_animal_5.Location = New System.Drawing.Point(106, 428)
+        Me.Text_animal_5.Name = "Text_animal_5"
+        Me.Text_animal_5.Size = New System.Drawing.Size(140, 13)
+        Me.Text_animal_5.TabIndex = 14
+        Me.Text_animal_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Title_animal_5
         '
@@ -1762,14 +1761,14 @@ Partial Class Form1
         Me.Title_animal_5.Text = "5th animal"
         Me.Title_animal_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox5
+        'Text_animal_4
         '
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox5.Location = New System.Drawing.Point(380, 344)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(140, 13)
-        Me.TextBox5.TabIndex = 12
-        Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Text_animal_4.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Text_animal_4.Location = New System.Drawing.Point(380, 344)
+        Me.Text_animal_4.Name = "Text_animal_4"
+        Me.Text_animal_4.Size = New System.Drawing.Size(140, 13)
+        Me.Text_animal_4.TabIndex = 12
+        Me.Text_animal_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Title_animal_4
         '
@@ -1780,14 +1779,14 @@ Partial Class Form1
         Me.Title_animal_4.Text = "4th animal"
         Me.Title_animal_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox6
+        'Text_animal_3
         '
-        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox6.Location = New System.Drawing.Point(106, 344)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(140, 13)
-        Me.TextBox6.TabIndex = 10
-        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Text_animal_3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Text_animal_3.Location = New System.Drawing.Point(106, 344)
+        Me.Text_animal_3.Name = "Text_animal_3"
+        Me.Text_animal_3.Size = New System.Drawing.Size(140, 13)
+        Me.Text_animal_3.TabIndex = 10
+        Me.Text_animal_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Title_animal_3
         '
@@ -1798,14 +1797,14 @@ Partial Class Form1
         Me.Title_animal_3.Text = "3rd animal"
         Me.Title_animal_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox4
+        'Text_animal_2
         '
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox4.Location = New System.Drawing.Point(380, 261)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(140, 13)
-        Me.TextBox4.TabIndex = 8
-        Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Text_animal_2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Text_animal_2.Location = New System.Drawing.Point(380, 261)
+        Me.Text_animal_2.Name = "Text_animal_2"
+        Me.Text_animal_2.Size = New System.Drawing.Size(140, 13)
+        Me.Text_animal_2.TabIndex = 8
+        Me.Text_animal_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Title_animal_2
         '
@@ -1816,14 +1815,14 @@ Partial Class Form1
         Me.Title_animal_2.Text = "2nd animal"
         Me.Title_animal_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox3
+        'Text_animal_1
         '
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox3.Location = New System.Drawing.Point(106, 261)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(140, 13)
-        Me.TextBox3.TabIndex = 6
-        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Text_animal_1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Text_animal_1.Location = New System.Drawing.Point(106, 261)
+        Me.Text_animal_1.Name = "Text_animal_1"
+        Me.Text_animal_1.Size = New System.Drawing.Size(140, 13)
+        Me.Text_animal_1.TabIndex = 6
+        Me.Text_animal_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Title_animal_1
         '
@@ -4696,17 +4695,17 @@ Partial Class Form1
     Friend WithEvents valu_homestyle As NumericUpDown
     Friend WithEvents Select_homestyle As ComboBox
     Friend WithEvents Check_trainerpoints As CheckBox
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents Text_animal_6 As TextBox
     Friend WithEvents Title_animal_6 As Label
-    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents Text_animal_5 As TextBox
     Friend WithEvents Title_animal_5 As Label
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents Text_animal_4 As TextBox
     Friend WithEvents Title_animal_4 As Label
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents Text_animal_3 As TextBox
     Friend WithEvents Title_animal_3 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents Text_animal_2 As TextBox
     Friend WithEvents Title_animal_2 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Text_animal_1 As TextBox
     Friend WithEvents Title_animal_1 As Label
     Friend WithEvents AdvH_animal_6 As PictureBox
     Friend WithEvents AdvH_animal_5 As PictureBox

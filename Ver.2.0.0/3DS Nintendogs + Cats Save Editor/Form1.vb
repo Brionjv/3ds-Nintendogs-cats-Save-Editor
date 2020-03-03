@@ -378,8 +378,8 @@ Public Class Form1
         End Try
         Try
             If FileLen(sysdata) = &HEE08 Then
-                Makesysdatabackup()
                 Readsysdata()
+                Makesysdatabackup()
             Else
                 If Select_language.SelectedItem = Select_language.Items.Item(0) Then
                     NCSE_dialog.Text_NCSE_dialog.Text = "Invalid Nintendog's + cats save file"
@@ -392,6 +392,26 @@ Public Class Form1
             End If
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub Text_menu_save_Click(sender As Object, e As EventArgs) Handles Text_menu_save.Click
+        Savesysdata()
+    End Sub
+
+    Private Sub Text_menu_save_MouseMove(sender As Object, e As MouseEventArgs) Handles Text_menu_save.MouseMove
+        Panel_menu_opensave.BackgroundImage = My.Resources.Icon_act_button
+    End Sub
+
+    Private Sub Text_menu_save_MouseLeave(sender As Object, e As EventArgs) Handles Text_menu_save.MouseLeave
+        Panel_menu_opensave.BackgroundImage = My.Resources.Icon_unact_button
+    End Sub
+
+    Private Sub Text_menu_open_MouseMove(sender As Object, e As MouseEventArgs) Handles Text_menu_open.MouseMove
+        Panel_menu_opensave.BackgroundImage = My.Resources.Icon_act_button
+    End Sub
+
+    Private Sub Text_menu_open_MouseLeave(sender As Object, e As EventArgs) Handles Text_menu_open.MouseLeave
+        Panel_menu_opensave.BackgroundImage = My.Resources.Icon_unact_button
     End Sub
 
     Public Sub Makesysdatabackup()
@@ -455,6 +475,10 @@ Public Class Form1
                         NCSE_dialog.Text_NCSE_dialog.Text = "Une mise à jour est disponible" & vbNewLine & vbNewLine & "Cliquez sur l'îcone de 3DS Nintendog's + cats Save Editor" & vbNewLine & "pour télécharger la nouvelle version"
                         NCSE_dialog.ShowDialog()
                     End If
+                    If Select_language.SelectedItem = Select_language.Items.Item(2) Then
+                        NCSE_dialog.Text_NCSE_dialog.Text = "Eine Aktualisierung ist verfügbar" & vbNewLine & vbNewLine & "Klicken Sie auf das 3DS Nintendog + Cats Save Editor Symbol" & vbNewLine & "um eine neue Version herunterzuladen."
+                        NCSE_dialog.ShowDialog()
+                    End If
                 End If
             Catch ex As Exception
                 If Select_language.SelectedItem = Select_language.Items.Item(0) Then
@@ -465,6 +489,10 @@ Public Class Form1
                     NCSE_dialog.Text_NCSE_dialog.Text = "Une erreur est survenue lors de la vérification des mises à jour" & vbNewLine & "Vérifiez que vous êtes connecté à internet"
                     NCSE_dialog.ShowDialog()
                 End If
+                If Select_language.SelectedItem = Select_language.Items.Item(2) Then
+                    NCSE_dialog.Text_NCSE_dialog.Text = "Beim Überprüfen der Updates ist ein Fehler aufgetreten." & vbNewLine & "Überprüfen Sie, ob Sie mit dem Internet verbunden sind."
+                    NCSE_dialog.ShowDialog()
+                End If
             End Try
         End If
     End Sub
@@ -472,6 +500,7 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
         If Select_language.SelectedItem = Nothing Then
             Select_language.SelectedItem = Select_language.Items.Item(0)
+            Select_homestyle.SelectedItem = Select_homestyle.Items.Item(0)
         End If
         Try
             Setting_Advhelp.Checked = My.Settings.Para_AdvH
@@ -498,6 +527,18 @@ Public Class Form1
     Private Sub NCSE_logo_update_Click(sender As Object, e As EventArgs) Handles NCSE_logo_update.Click
         Process.Start("https://github.com/Brionjv/3ds-Nintendogs-cats-Save-Editor/releases")
     End Sub
+
+    Private Sub Icon_filepath_MouseMove(sender As Object, e As MouseEventArgs) Handles Icon_filepath.MouseMove
+        Panel_filepath.BackgroundImage = My.Resources.Icon_act_button
+        TextBox_fpath.Visible = True
+    End Sub
+
+    Private Sub Icon_filepath_MouseLeave(sender As Object, e As EventArgs) Handles Icon_filepath.MouseLeave
+        Panel_filepath.BackgroundImage = My.Resources.Icon_unact_button
+        TextBox_fpath.Visible = False
+    End Sub
+
+
     'end menu
     'settings
     Private Sub Setting_filepath_CheckedChanged(sender As Object, e As EventArgs) Handles Setting_filepath.CheckedChanged
@@ -702,15 +743,322 @@ Public Class Form1
         Switchlanguage()
     End Sub
     'end settings
-
+    'main
     Public Sub Readsysdata()
         Dim Reader As New PackageIO.Reader(sysdata, PackageIO.Endian.Little)
         Try
+            Reader.Position = Money
+            valu_money.Value = Reader.ReadUInt32
+            Reader.Position = houseinterior
+            valu_homestyle.Value = Reader.ReadByte
+            Reader.Position = Ist_animal
+            Text_animal_1.Text = Reader.ReadUnicodeString(10)
+            Reader.Position = IInd_animal
+            Text_animal_2.Text = Reader.ReadUnicodeString(10)
+            Reader.Position = IIIrd_animal
+            Text_animal_3.Text = Reader.ReadUnicodeString(10)
+            Reader.Position = IVth_animal
+            Text_animal_4.Text = Reader.ReadUnicodeString(10)
+            Reader.Position = Vth_animal
+            Text_animal_5.Text = Reader.ReadUnicodeString(10)
+            Reader.Position = VIth_animal
+            Text_animal_6.Text = Reader.ReadUnicodeString(10)
             TextBox_fpath.Text = sysdata
             Text_menu_save.Visible = True
         Catch ex As Exception
-
+            Text_menu_save.Visible = False
         End Try
     End Sub
 
+    Public Sub Savesysdata()
+        Unlockallitems()
+        Maxtrainerspoints()
+        edithiddennames()
+        Try
+            Dim Writer As New PackageIO.Writer(sysdata, PackageIO.Endian.Little)
+            Writer.Position = Money
+            Writer.WriteUInt32(valu_money.Value)
+            For i As Integer = 0 To 19
+                Writer.Position = Ist_animal + i
+                Writer.WriteInt8(0)
+            Next
+            Writer.Position = Ist_animal
+            Writer.WriteUnicodeString(Text_animal_1.Text)
+            For i As Integer = 0 To 19
+                Writer.Position = IInd_animal + i
+                Writer.WriteInt8(0)
+            Next
+            Writer.Position = IInd_animal
+            Writer.WriteUnicodeString(Text_animal_2.Text)
+            For i As Integer = 0 To 19
+                Writer.Position = IIIrd_animal + i
+                Writer.WriteInt8(0)
+            Next
+            Writer.Position = IIIrd_animal
+            Writer.WriteUnicodeString(Text_animal_3.Text)
+            For i As Integer = 0 To 19
+                Writer.Position = IVth_animal + i
+                Writer.WriteInt8(0)
+            Next
+            Writer.Position = IVth_animal
+            Writer.WriteUnicodeString(Text_animal_4.Text)
+            For i As Integer = 0 To 19
+                Writer.Position = Vth_animal + i
+                Writer.WriteInt8(0)
+            Next
+            Writer.Position = Vth_animal
+            Writer.WriteUnicodeString(Text_animal_5.Text)
+            For i As Integer = 0 To 19
+                Writer.Position = VIth_animal + i
+                Writer.WriteInt8(0)
+            Next
+            Writer.Position = VIth_animal
+            Writer.WriteUnicodeString(Text_animal_6.Text)
+        Catch ex As Exception
+            If Select_language.SelectedItem = Select_language.Items.Item(0) Then
+                NCSE_dialog.Text_NCSE_dialog.Text = "Failed to edit sysdata.dat"
+                NCSE_dialog.ShowDialog()
+            End If
+            If Select_language.SelectedItem = Select_language.Items.Item(1) Then
+                NCSE_dialog.Text_NCSE_dialog.Text = "L'édition de sysdata.dat à échoué"
+                NCSE_dialog.ShowDialog()
+            End If
+            If Select_language.SelectedItem = Select_language.Items.Item(2) Then
+                NCSE_dialog.Text_NCSE_dialog.Text = "sysdata.dat konnte nicht bearbeitet werden"
+                NCSE_dialog.ShowDialog()
+            End If
+        End Try
+        Try
+            Dim ws As New FileStream(sysdata, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite)
+            ws.Position = houseinterior
+            ws.WriteByte(valu_homestyle.Value)
+        Catch ex As Exception
+            If Select_language.SelectedItem = Select_language.Items.Item(0) Then
+                NCSE_dialog.Text_NCSE_dialog.Text = "Failed to edit home style"
+                NCSE_dialog.ShowDialog()
+            End If
+            If Select_language.SelectedItem = Select_language.Items.Item(1) Then
+                NCSE_dialog.Text_NCSE_dialog.Text = "L'édition du style de l'intérieur à échoué"
+                NCSE_dialog.ShowDialog()
+            End If
+            If Select_language.SelectedItem = Select_language.Items.Item(2) Then
+                NCSE_dialog.Text_NCSE_dialog.Text = "Home-Stil könnte nicht bearbeitet werden"
+                NCSE_dialog.ShowDialog()
+            End If
+        End Try
+        Notifications()
+    End Sub
+
+    Private Sub Fea_money_Click(sender As Object, e As EventArgs) Handles Fea_money.Click
+        valu_money.Value = valu_money.Maximum
+    End Sub
+
+    Private Sub valu_homestyle_ValueChanged(sender As Object, e As EventArgs) Handles valu_homestyle.ValueChanged
+        If valu_homestyle.Value = 0 Then
+            Select_homestyle.SelectedItem = Select_homestyle.Items.Item(0)
+        ElseIf valu_homestyle.Value = 1 Then
+            Select_homestyle.SelectedItem = Select_homestyle.Items.Item(1)
+        ElseIf valu_homestyle.Value = 2 Then
+            Select_homestyle.SelectedItem = Select_homestyle.Items.Item(2)
+        ElseIf valu_homestyle.Value = 3 Then
+            Select_homestyle.SelectedItem = Select_homestyle.Items.Item(3)
+        ElseIf valu_homestyle.Value = 4 Then
+            Select_homestyle.SelectedItem = Select_homestyle.Items.Item(4)
+        ElseIf valu_homestyle.Value = 5 Then
+            Select_homestyle.SelectedItem = Select_homestyle.Items.Item(5)
+        ElseIf valu_homestyle.Value = 6 Then
+            Select_homestyle.SelectedItem = Select_homestyle.Items.Item(6)
+        ElseIf valu_homestyle.Value = 7 Then
+            Select_homestyle.SelectedItem = Select_homestyle.Items.Item(7)
+        ElseIf valu_homestyle.Value = 8 Then
+            Select_homestyle.SelectedItem = Select_homestyle.Items.Item(8)
+        End If
+    End Sub
+
+    Private Sub Select_homestyle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Select_homestyle.SelectedIndexChanged
+        If Select_homestyle.SelectedItem = Select_homestyle.Items.Item(0) Then
+            valu_homestyle.Value = 0
+        ElseIf Select_homestyle.SelectedItem = Select_homestyle.Items.Item(1) Then
+            valu_homestyle.Value = 1
+        ElseIf Select_homestyle.SelectedItem = Select_homestyle.Items.Item(2) Then
+            valu_homestyle.Value = 2
+        ElseIf Select_homestyle.SelectedItem = Select_homestyle.Items.Item(3) Then
+            valu_homestyle.Value = 3
+        ElseIf Select_homestyle.SelectedItem = Select_homestyle.Items.Item(4) Then
+            valu_homestyle.Value = 4
+        ElseIf Select_homestyle.SelectedItem = Select_homestyle.Items.Item(5) Then
+            valu_homestyle.Value = 5
+        ElseIf Select_homestyle.SelectedItem = Select_homestyle.Items.Item(6) Then
+            valu_homestyle.Value = 6
+        ElseIf Select_homestyle.SelectedItem = Select_homestyle.Items.Item(7) Then
+            valu_homestyle.Value = 7
+        ElseIf Select_homestyle.SelectedItem = Select_homestyle.Items.Item(8) Then
+            valu_homestyle.Value = 8
+        End If
+    End Sub
+
+    Public Sub Unlockallitems()
+        Try
+            If Check_allitems.Checked = True Then
+                Dim Writer As New PackageIO.Writer(sysdata, PackageIO.Endian.Little)
+                For i As Integer = 0 To 354
+                    Writer.Position = Inventory + i
+                    Writer.WriteInt8(valu_allitems.Value)
+                Next
+            End If
+        Catch ex As Exception
+            If Select_language.SelectedItem = Select_language.Items.Item(0) Then
+                NCSE_dialog.Text_NCSE_dialog.Text = "Failed to edit items"
+                NCSE_dialog.ShowDialog()
+            End If
+            If Select_language.SelectedItem = Select_language.Items.Item(1) Then
+                NCSE_dialog.Text_NCSE_dialog.Text = "L'édition des objets à échoué"
+                NCSE_dialog.ShowDialog()
+            End If
+            If Select_language.SelectedItem = Select_language.Items.Item(2) Then
+                NCSE_dialog.Text_NCSE_dialog.Text = "Elemente konnten nicht bearbeitet werden"
+                NCSE_dialog.ShowDialog()
+            End If
+            Check_allitems.Checked = False
+        End Try
+    End Sub
+
+    Public Sub Maxtrainerspoints()
+        Try
+            If Check_trainerpoints.Checked = True Then
+                Dim Writer As New PackageIO.Writer(sysdata, PackageIO.Endian.Little)
+                Writer.Position = Ownerpts
+                Writer.WriteUInt32(1203982208)
+            End If
+        Catch ex As Exception
+            If Select_language.SelectedItem = Select_language.Items.Item(0) Then
+                NCSE_dialog.Text_NCSE_dialog.Text = "Failed to edit owner points"
+                NCSE_dialog.ShowDialog()
+            End If
+            If Select_language.SelectedItem = Select_language.Items.Item(1) Then
+                NCSE_dialog.Text_NCSE_dialog.Text = "L'édition des points d'entraîneur à échoué"
+                NCSE_dialog.ShowDialog()
+            End If
+            If Select_language.SelectedItem = Select_language.Items.Item(2) Then
+                NCSE_dialog.Text_NCSE_dialog.Text = "Eigentümerpunkte konnten nicht bearbeitet werden"
+                NCSE_dialog.ShowDialog()
+            End If
+            Check_trainerpoints.Checked = False
+        End Try
+    End Sub
+
+    Public Sub edithiddennames()
+        Dim Writer As New PackageIO.Writer(sysdata, PackageIO.Endian.Little)
+        Try
+            If Check_dog_1.Checked = True Then
+                For i As Integer = 0 To 19
+                    Writer.Position = Ist_dog + i
+                    Writer.WriteInt8(0)
+                Next
+                Writer.Position = Ist_dog
+                Writer.WriteUnicodeString(Text_animal_1.Text)
+            End If
+            If Check_cat_1.Checked = True Then
+                For i As Integer = 0 To 19
+                    Writer.Position = Ist_cat + i
+                    Writer.WriteInt8(0)
+                Next
+                Writer.Position = Ist_cat
+                Writer.WriteUnicodeString(Text_animal_1.Text)
+            End If
+            If Check_dog_2.Checked = True Then
+                For i As Integer = 0 To 19
+                    Writer.Position = IInd_dog + i
+                    Writer.WriteInt8(0)
+                Next
+                Writer.Position = IInd_dog
+                Writer.WriteUnicodeString(Text_animal_2.Text)
+            End If
+            If Check_cat_2.Checked = True Then
+                For i As Integer = 0 To 19
+                    Writer.Position = IInd_cat + i
+                    Writer.WriteInt8(0)
+                Next
+                Writer.Position = IInd_cat
+                Writer.WriteUnicodeString(Text_animal_2.Text)
+            End If
+            If Check_dog_3.Checked = True Then
+                For i As Integer = 0 To 19
+                    Writer.Position = IIIrd_dog + i
+                    Writer.WriteInt8(0)
+                Next
+                Writer.Position = IIIrd_dog
+                Writer.WriteUnicodeString(Text_animal_3.Text)
+            End If
+            If Check_cat_3.Checked = True Then
+                For i As Integer = 0 To 19
+                    Writer.Position = IIIrd_cat + i
+                    Writer.WriteInt8(0)
+                Next
+                Writer.Position = IIIrd_cat
+                Writer.WriteUnicodeString(Text_animal_3.Text)
+            End If
+            If Check_dog_4.Checked = True Then
+                For i As Integer = 0 To 19
+                    Writer.Position = IVth_dog + i
+                    Writer.WriteInt8(0)
+                Next
+                Writer.Position = IVth_dog
+                Writer.WriteUnicodeString(Text_animal_4.Text)
+            End If
+            If Check_cat_4.Checked = True Then
+                For i As Integer = 0 To 19
+                    Writer.Position = IVth_cat + i
+                    Writer.WriteInt8(0)
+                Next
+                Writer.Position = IVth_cat
+                Writer.WriteUnicodeString(Text_animal_4.Text)
+            End If
+            If Check_dog_5.Checked = True Then
+                For i As Integer = 0 To 19
+                    Writer.Position = Vth_dog + i
+                    Writer.WriteInt8(0)
+                Next
+                Writer.Position = Vth_dog
+                Writer.WriteUnicodeString(Text_animal_5.Text)
+            End If
+            If Check_cat_5.Checked = True Then
+                For i As Integer = 0 To 19
+                    Writer.Position = Vth_cat + i
+                    Writer.WriteInt8(0)
+                Next
+                Writer.Position = Vth_cat
+                Writer.WriteUnicodeString(Text_animal_5.Text)
+            End If
+            If Check_dog_6.Checked = True Then
+                For i As Integer = 0 To 19
+                    Writer.Position = VIth_dog + i
+                    Writer.WriteInt8(0)
+                Next
+                Writer.Position = VIth_dog
+                Writer.WriteUnicodeString(Text_animal_6.Text)
+            End If
+            If Check_cat_6.Checked = True Then
+                For i As Integer = 0 To 19
+                    Writer.Position = VIth_cat + i
+                    Writer.WriteInt8(0)
+                Next
+                Writer.Position = VIth_cat
+                Writer.WriteUnicodeString(Text_animal_6.Text)
+            End If
+        Catch ex As Exception
+            If Select_language.SelectedItem = Select_language.Items.Item(0) Then
+                NCSE_dialog.Text_NCSE_dialog.Text = "Failed to edit hidden names"
+                NCSE_dialog.ShowDialog()
+            End If
+            If Select_language.SelectedItem = Select_language.Items.Item(1) Then
+                NCSE_dialog.Text_NCSE_dialog.Text = "L'édition des noms cachés a échoué"
+                NCSE_dialog.ShowDialog()
+            End If
+            If Select_language.SelectedItem = Select_language.Items.Item(2) Then
+                NCSE_dialog.Text_NCSE_dialog.Text = "Versteckte Namen konnten nicht bearbeitet werden"
+                NCSE_dialog.ShowDialog()
+            End If
+        End Try
+    End Sub
 End Class

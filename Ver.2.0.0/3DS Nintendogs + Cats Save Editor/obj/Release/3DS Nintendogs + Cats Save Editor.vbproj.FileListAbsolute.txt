@@ -12,3 +12,4 @@ C:\Users\brice\source\repos\3DS Nintendogs + Cats Save Editor\3DS Nintendogs + C
 C:\Users\brice\source\repos\3DS Nintendogs + Cats Save Editor\3DS Nintendogs + Cats Save Editor\obj\Release\3DS Nintendogs + Cats Save Editor.exe
 C:\Users\brice\source\repos\3DS Nintendogs + Cats Save Editor\3DS Nintendogs + Cats Save Editor\obj\Release\3DS Nintendogs + Cats Save Editor.xml
 C:\Users\brice\source\repos\3DS Nintendogs + Cats Save Editor\3DS Nintendogs + Cats Save Editor\obj\Release\3DS Nintendogs + Cats Save Editor.pdb
+C:\Users\brice\source\repos\3DS Nintendogs + Cats Save Editor\3DS Nintendogs + Cats Save Editor\obj\Release\3DS Nintendogs + Cats Save Editor.vbprojAssemblyReference.cache
