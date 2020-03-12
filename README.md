@@ -1,6 +1,6 @@
 # 3ds-Nintendogs-cats-Save-Editor
 
-![Main windows](https://i11.servimg.com/u/f11/19/11/94/79/ncse10.png)
+![Main windows](https://raw.githubusercontent.com/Brionjv/3ds-Nintendogs-cats-Save-Editor/master/NCSE.png)
 
 # How to use : 
 - Extract your save with a homebrew (JK's Save Manager or other)
